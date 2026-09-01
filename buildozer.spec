@@ -6,10 +6,10 @@
 [app]
 
 # (str) Title of your application
-title = My Test Appn
+title = My Application
 
 # (str) Package name
-package.name = mytestapp
+package.name = myapp
 
 # (str) Package domain (needed for android/ios packaging)
 package.domain = org.test
@@ -142,7 +142,7 @@ android.ndk = 25b
 # agreements. This is intended for automation only. If set to False,
 # the default, you will be shown the license when first running
 # buildozer.
-# android.accept_sdk_license = True
+android.accept_sdk_license = True
 
 # (str) Android entry point, default is ok for Kivy-based app
 #android.entrypoint = org.kivy.android.PythonActivity
