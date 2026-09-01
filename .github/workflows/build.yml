@@ -16,6 +16,14 @@ jobs:
         with:
           python-version: '3.11'
 
+      - name: Cache Buildozer global directory
+        uses: actions/cache@v3
+        with:
+          path: .buildozer_global
+          key: buildozer-global-${{ hashFiles('buildozer.spec') }}
+          restore-keys: |
+            buildozer-global-
+
       - name: Install dependencies
         run: |
           sudo apt-get update
@@ -39,6 +47,7 @@ jobs:
       - name: Install Buildozer and Cython
         run: |
           pip install --upgrade pip
+          pip install "pip<25.0"
           pip install Cython==0.29.37 buildozer
 
       - name: Build with Buildozer
