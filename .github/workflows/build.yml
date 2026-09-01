@@ -44,10 +44,11 @@ jobs:
             libffi-dev \
             openjdk-17-jdk
 
-      - name: Install Buildozer and Cython
+      - name: Install Buildozer, Cython, and dependencies
         run: |
           pip install --upgrade pip
-          pip install "pip<25.0" "virtualenv<20.26" Cython==0.29.37 buildozer
+          pip install "pip<24.4" "virtualenv<20.26.0"
+          pip install Cython==0.29.37 buildozer python-for-android==2024.01.18
 
       - name: Build with Buildozer
         run: |
